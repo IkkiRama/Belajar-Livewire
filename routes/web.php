@@ -1,5 +1,8 @@
 <?php
 
+
+use App\Http\Livewire\Post;
+use App\Http\Livewire\User;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -16,3 +19,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/post',Post::class);
+Route::get('/user',User::class);
