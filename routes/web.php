@@ -9,6 +9,7 @@ use App\Http\Livewire\Action;
 use App\Http\Livewire\Product;
 use App\Http\Livewire\Contact;
 use App\Http\Livewire\Pelanggan;
+use App\Http\Livewire\Siswa;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,3 +36,4 @@ Route::get('/action',Action::class);
 Route::get('/product',Product::class);
 Route::get('/contact',Contact::class);
 Route::get('/pelanggan',Pelanggan::class);
+Route::get('/siswa',Siswa::class);

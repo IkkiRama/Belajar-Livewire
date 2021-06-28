@@ -13,10 +13,27 @@
 
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/0.0.0-5a9c68d/tailwind.min.css" integrity="sha512-XgPcoW5S5ESFTO59Iy12VrhVngtzvQiLUKgp4JG3h1NVLPbdcNBNKELTswD/zDt4MEo98e7f16D/S07Arix11g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     @livewireStyles
 </head>
 <body>
     {{$slot}}
     @livewireScripts
+
+    <script>
+        window.livewire.on('studentAdded',()=> {
+            $('#addSiswaModal').modal('hide');
+        })
+
+        window.livewire.on('studentUpdate',()=> {
+            $('#updateSiswaModal').modal('hide');
+        })
+    </script>
 </body>
 </html>
