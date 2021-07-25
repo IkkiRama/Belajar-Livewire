@@ -34,6 +34,11 @@
         window.livewire.on('studentUpdate',()=> {
             $('#updateSiswaModal').modal('hide');
         })
+
+
+        window.livewire.on('uploadAdded',()=> {
+            $('#addUploadModal').modal('hide');
+        })
     </script>
 </body>
 </html>
