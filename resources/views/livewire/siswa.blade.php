@@ -12,10 +12,19 @@
                     @endif
                     <div class="card">
                         <div class="card-header">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h3>Daftar Users</h3>
 
-                            <h3>Daftar Users</h3>
+                                    <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#addSiswaModal">Tambah Siswa</button>
+                                </div>
 
-                            <button type="button" class="btn btn-primary btn-sm mt-3" data-toggle="modal" data-target="#addSiswaModal">Tambah Siswa</button>
+                                <div class="col-md-4">
+                                    <input type="text" class="form-control" wire:model="search" placeholder="Search..." autofocus="on">
+                                </div>
+                            </div>
+
+
 
                         </div>
 
@@ -26,6 +35,7 @@
                                         <th>No</th>
                                         <th>Nama</th>
                                         <th>Email</th>
+                                        <th>Telepon</th>
                                         <th>Aksi</th>
                                     </tr>
                                 </thead>
@@ -35,6 +45,7 @@
                                         <td>{{$loop->iteration}}</td>
                                         <td>{{$value->firstname}} {{$value->lastname}}</td>
                                         <td>{{$value->email}}</td>
+                                        <td>{{$value->phone}}</td>
                                         <td>
 
                                             <button type="button" class="btn btn-warning btn-sm" data-toggle="modal" data-target="#updateSiswaModal" wire:click.prevent="edit({{$value->id}})">

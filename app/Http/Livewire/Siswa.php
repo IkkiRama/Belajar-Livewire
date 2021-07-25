@@ -13,6 +13,7 @@ class Siswa extends Component
     public $lastname;
     public $email;
     public $phone;
+    public $search;
 
 
     public function resetForm()
@@ -26,7 +27,12 @@ class Siswa extends Component
 
     public function render()
     {
-        $siswa = siswaa::paginate(15);
+        $search = "%".$this->search."%";
+        $siswa =    siswaa::where("firstname", "LIKE", $search)
+                    ->orWhere("lastname", "LIKE", $search)
+                    ->orWhere("email", "LIKE", $search)
+                    ->orWhere("phone", "LIKE", $search)
+                    ->orderBy("id", "DESC")->paginate(5);
         return view('livewire.siswa', compact(["siswa"]));
     }
 
